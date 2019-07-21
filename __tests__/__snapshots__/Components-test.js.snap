@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> render 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignSelf": "center",
+        "backgroundColor": "#fff",
+        "elevation": 3,
+        "marginVertical": 12,
+      },
+      undefined,
+      undefined,
+    ]
+  }
+>
+  <View
+    accessible={true}
+    clickable={false}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "alignSelf": "stretch",
+        "opacity": 1,
+        "paddingHorizontal": 32,
+        "paddingVertical": 8,
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#333",
+            "fontSize": 16,
+            "fontWeight": "100",
+          },
+          undefined,
+        ]
+      }
+    >
+      Button
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`<Header /> render 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "stretch",
+      "backgroundColor": "#fff",
+      "elevation": 3,
+      "flexDirection": "row",
+      "height": 48,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "alignSelf": "center",
+        "color": "#333",
+        "fontSize": 18,
+        "fontWeight": "100",
+        "marginLeft": 24,
+      }
+    }
+  >
+    Header
+  </Text>
+</View>
+`;
