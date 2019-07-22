@@ -1,28 +1,28 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
+import React from "react";
+import renderer from "react-test-renderer";
 
 // Components
-import Header from '../sources/Components/Header';
-import Button from '../sources/Components/Button';
+import Header from "../sources/Components/Header";
+import Button from "../sources/Components/Button";
 
-describe('<Header />', () => {
-	const defaultProps = {
-		title: 'Header'
-	};
-	const wrapper = renderer.create(<Header {...defaultProps} />);
+describe("<Header />", () => {
+  const defaultProps = {
+    title: "Header"
+  };
+  const wrapper = renderer.create(<Header {...defaultProps} />);
 
-	test('render', () => {
-		expect(wrapper).toMatchSnapshot();
-	});
+  test("render", () => {
+    expect(wrapper).toMatchSnapshot();
+  });
 });
 
-describe('<Button />', () => {
-	const defaultProps = {
-		title: 'Button'
-	};
-	const wrapper = renderer.create(<Button {...defaultProps} />);
+describe("<Button />", () => {
+  const defaultProps = {
+    title: "Button"
+  };
+  const wrapper = renderer.create(<Button {...defaultProps} />);
 
-	test('render', () => {
-		expect(wrapper).toMatchSnapshot();
-	});
+  test("render", () => {
+    expect(wrapper).toMatchSnapshot();
+  });
 });
