@@ -1,6 +1,6 @@
 language: android
 jdk: oraclejdk8
-dist: trusty
+dist: xenial
 sudo: required
 
 cache:
@@ -10,19 +10,41 @@ cache:
 
 android:
   components:
+    - tools
+    - platform-tools
     - build-tools-28.0.3
     - android-28
 
+matrix:
+  include:
+    - name: "ESLint & Unit Test"
+      env: LINT_UNIT_TEST=yes
+      os: linux
+    
+    - name: "Build Android Debug"
+      env: ANDROID_BUILD=yes GRADLE_ARGS=assembleDebug
+      os: linux
+    
+    - name: "Build Android Release"
+      env: ANDROID_BUILD=yes GRADLE_ARGS=bundleRelease
+      os: linux
+
 before_install:
   - nvm install 10
-  - node --version
   - npm install -g yarn
-  - chmod +x ./android/gradlew
 
 install:
   - yarn install
 
+before_script:
+  - chmod +x ./android/gradlew
+
 script:
-  - yarn lint
-  - yarn test
-  - cd android && ./gradlew bundleRelease
+  - if [ "$LINT_UNIT_TEST" = "yes" ]; then
+      yarn lint;
+      yarn test;
+    fi
+  
+  - if [ "$ANDROID_BUILD" = "yes" ]; then
+      cd android && ./gradlew clean $GRADLE_ARGS;
+    fi
